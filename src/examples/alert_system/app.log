@@ -1,0 +1,6 @@
+
+2025-10-03 08:27:54 - [INFO] User login successful
+2025-10-03 08:27:54 - [INFO] Request latency=312ms
+2025-10-03 08:27:54 - [ERROR] Payment service unavailable
+2025-10-03 08:27:54 - [FAILURE] Disk read timeout
+2025-10-03 08:27:54 - [INFO] User logout successful

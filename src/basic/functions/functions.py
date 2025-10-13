@@ -137,7 +137,7 @@ def cal_area(length,width,/):
 area = cal_area(length = 10,width = 20)
 Error:
 Traceback (most recent call last):
-  File "/Users/macbookpro/Documents/Python Practice/python_practice_part1/src/basic/functions/functions.py", line 132, in <module>
+  File "/Users/macbookpro/Documents/Python Practice/python_practice_part1/core/basic/functions/functions.py", line 132, in <module>
     area = cal_area(length = 10,width = 20)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: cal_area() got some positional-only arguments passed as keyword arguments: 'width'

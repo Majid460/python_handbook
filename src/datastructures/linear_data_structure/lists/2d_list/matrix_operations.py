@@ -223,6 +223,7 @@ Transpose of 2d_list:
 [3, 2, 3]
 """
 # Solution 2 using List comprehension
+li = [[]]
 
 transpose_matrix = [[matrix_two[i][j] for i in range(rows)] for j in range(len(matrix_two[0]))]
 print("Transpose of 2d_list:")
