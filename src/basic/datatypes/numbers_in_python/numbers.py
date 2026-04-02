@@ -78,6 +78,7 @@ str_of_num = str(num)
 len_of_num = len(str_of_num)
 output_num = 0
 
+
 for i in str_of_num:
     output_num += int(i)**len_of_num
 if output_num == num:

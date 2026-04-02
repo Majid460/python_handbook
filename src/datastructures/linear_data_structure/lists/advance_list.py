@@ -136,6 +136,8 @@ Items in list => ['1', '3', '4']
 
 # Printing using for loop
 thisList = ["apple", "banana", "cherry"]
+for i in thisList:
+    print(i)
 for i in range(len(thisList)):
   print(f"Printing using for loop => {thisList[i]}")
 

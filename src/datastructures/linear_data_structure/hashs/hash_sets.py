@@ -21,11 +21,12 @@ class HashSet:
                 return val % 10
             case _:
                 return None
-    def is_empty(self,inner_list:list):
+
+    def is_empty(self, inner_list: list):
         return len(inner_list) == 0
 
     # Add value in hash set
-    def add(self,val):
+    def add(self, val):
         index = self.hash_function(val)
         # Case 1: Slot has no value
         if self.hash_set[index] is None:
@@ -33,14 +34,14 @@ class HashSet:
         # Case 2: Slot has a list
         if isinstance(self.hash_set[index], list):
             if val not in self.hash_set[index]:
-                 self.hash_set[index].append(val)
+                self.hash_set[index].append(val)
         # Case 3: Slot has no list but has value
         else:
             if val not in self.hash_set[index]:
                 self.hash_set[index] = [self.hash_set[index], val]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     hash_set = HashSet(size=10)
     hash_set.add("Charlotte")
     hash_set.add("Thomas")

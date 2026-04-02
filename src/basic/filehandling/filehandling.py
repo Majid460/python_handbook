@@ -19,66 +19,58 @@ In addition you can specify if the file should be handled as binary or text mode
 
 
 """
+
 # 1. To open a file use open()
-file = open("test.txt","rt") # Because "r" for read, and "t" for text are the default values, you do not need to specify them.
+file = open(
+    "test.txt", "rt"
+)  # Because "r" for read, and "t" for text are the default values, you do not need to specify them.
 print(file.read())
 file.close()
-"""
-Q. What is life?
-A. Life is temporary environment to execute certain tasks.
-"""
+
 # 2. Open with "with"
 """
 Then you do not have to worry about closing your files, the with statement takes care of that.
 """
-with open("test.txt","rt") as f:
+with open("test.txt", "rt") as f:
     print(f.read())
-
-"""
-Q. What is life?
-A. Life is temporary environment to execute certain tasks.
-"""
-"""
-Note: You should always close your files. In some cases, due to buffering, changes made to a file may not show until you close the file.
-"""
 
 # 3. Read Only Parts of the File
 """
 
 By default the read() method returns the whole text, but you can also specify how many characters you want to return:
 """
-with open("test.txt","rt") as f:
+with open("test.txt", "rt") as f:
     print(f.read(5))
     # Reads first 5 characters
 # Q. Wh
 
 # 4. Read lines
-with open("test.txt","rt") as f:
-    print(f.readline()) # Reads first line
+with open("test.txt", "rt") as f:
+    print(f.readline())  # Reads first line
 
-#By calling readline() two times, you can read the two first lines:
+# By calling readline() two times, you can read the two first lines:
 
 """Example
 Read two lines of the file:
 """
 
 with open("test.txt") as f:
-  print(f.readline())
-  print(f.readline())
+    print(f.readline())
+    print(f.readline())
 
-#By looping through the lines of the file, you can read the whole file, line by line:
+# By looping through the lines of the file, you can read the whole file, line by line:
 
 """Example
 Loop through the file line by line:"""
 
 with open("test.txt") as f:
-  for x in f:
-    print(x)
+    for x in f:
+        print(x)
 
 # Read second line
 with open("test.txt") as f:
     lines = f.readlines()
-    if len(lines)>=2:
+    if len(lines) >= 2:
         print(f"second line:: {lines[1]}")
 # second line:: A. Life is temporary environment to execute certain tasks.
 
@@ -118,6 +110,7 @@ print("-------------------Create a new file------------------")
 
 # Remove a file
 import os
+
 # os.remove("newfile.txt")
 
 # if os.path.exists("newfile.txt"):
@@ -139,10 +132,7 @@ import json
 
 # To convert a dict to json use dumps
 
-x = {
-    "name":"Test",
-    "age":20
-}
+x = {"name": "Test", "age": 20}
 """The json.dumps() method has parameters to order the keys in the result:
 
 Example

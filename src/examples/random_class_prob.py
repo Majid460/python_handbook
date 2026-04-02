@@ -12,10 +12,10 @@ We use two structures together:
 List/Array → to store values (so we can get random element in O(1)).
 HashMap (dict) → to store each value’s index in the list (so we can insert/remove in O(1)).
 
-Because if we try to delete to remove element from list it will cost O(n) because it will shift all elements
+Because if we try to delete or remove element from list it will cost O(n) because it will shift all elements
 """
-from random import Random
 
+from random import Random
 
 class StoreData:
     def __init__(self):
