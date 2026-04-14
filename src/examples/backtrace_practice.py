@@ -32,14 +32,14 @@ class ListPractice:
     def second_largest(self):
         if len(self.arr) < 2:
             return None  # Not enough elements
-        first = second = float('-inf')  # Initialize
+        first = second = float("-inf")  # Initialize
         for num in self.arr:
             if num > first:
                 second = first
                 first = num
             elif first > num > second:
                 second = num
-        return second if second != float('-inf') else None
+        return second if second != float("-inf") else None
 
     # Find the Kth-largest number
     def kth_largest(self, k):
@@ -88,7 +88,7 @@ class TuplePractice:
     # convert it into a dict where values are lists of keys with same value
     # output: {1: ['a','c'], 2: ['b']}
     def convert_tuple(self):
-        list_tuple = [('a', 1), ('b', 2), ('c', 1)]
+        list_tuple = [("a", 1), ("b", 2), ("c", 1)]
         dic = {}
         for key, num in list_tuple:
             if num in dic:
@@ -169,13 +169,14 @@ class SetPractice:
         print(f"\n -------- Find unique with O(n)--------")
         # Another way with O(n)
         freq = Counter(lis)
+        print(freq)
         uniq = [num for num, count in freq.items() if count == 1]
         print(uniq)
 
     # Check if two strings are anagrams using sets and lengths.
     def anagram(self):
-        word_a = 'spar'
-        word_b = 'rasp'
+        word_a = "spar"
+        word_b = "rasp"
         len_a = len(word_a)
         len_b = len(word_b)
         set_a = set([w for w in word_a])
@@ -188,7 +189,9 @@ class SetPractice:
                     count += 1
         if count == len_a and count == len_b:
             print("Both words are anagram")
-        print(f"\n -------- Second approach - Time: O(n log n) → because of the sorting step --------")
+        print(
+            f"\n -------- Second approach - Time: O(n log n) → because of the sorting step --------"
+        )
         st_a = sorted(word_a)
         st_b = sorted(word_b)
         print(st_a)
@@ -222,22 +225,23 @@ class Map:
     # Multiply each element in [1,2,3,4] by 10 using map().
     def arithmetic(self):
         multiply = list(
-            map(lambda a: a * 10, self.lis))  # converting to list is O(n) because map returns a iterator not a list
+            map(lambda a: a * 10, self.lis)
+        )  # converting to list is O(n) because map returns a iterator not a list
         print(f"Multiply by 10 : {multiply}")
         # we can avoid that by .join() accepts any iterable of strings, not just a list.
-        sq = ' '.join(map(lambda x: str(x ** 2), self.lis))
+        sq = " ".join(map(lambda x: str(x**2), self.lis))
         print(f"Square of each number : {sq}")
         # Addition
-        ad = ' '.join(map(lambda r: str(r + 5), self.lis))
+        ad = " ".join(map(lambda r: str(r + 5), self.lis))
         print(f"Add 5 in each number : {ad}")
 
         # Convert a list of lower to upper
-        low_list = ['ssaf', 'fdds', 'gffdd']
-        up_li = ' '.join(map(lambda d: str.upper(d), low_list))
+        low_list = ["ssaf", "fdds", "gffdd"]
+        up_li = " ".join(map(lambda d: str.upper(d), low_list))
         print(f"Lower to upper case : {up_li}")
 
         # Get the length of each word in ['apple', 'banana', 'cherry'].
-        len_each = ' '.join(map(lambda w: str(len(w)), low_list))
+        len_each = " ".join(map(lambda w: str(len(w)), low_list))
         print(f"length of each words : {len_each}")
 
         list1 = [1, 2, 3]
@@ -248,7 +252,9 @@ class Map:
         print(summed)
         # If else in map
         nums = [1, 2, 3, 4]
-        labels = list(map(lambda x: "small" if x < 2 else "medium" if x < 4 else "large", nums))
+        labels = list(
+            map(lambda x: "small" if x < 2 else "medium" if x < 4 else "large", nums)
+        )
         print(labels)
 
     # Filter
@@ -262,55 +268,54 @@ class Map:
 
         # Filter strings containing a letter
         li_str = ["apple", "banana", "cherry"]
-        filter_s = list(filter(lambda x: 'a' in x, li_str))
+        filter_s = list(filter(lambda x: "a" in x, li_str))
         print(filter_s)  # ['apple', 'banana']
 
         # Filter numbers greater than a threshold
         filter_n = list(filter(lambda a: a > 3, list_a))
-        print(filter_n) # [4, 5, 6]
+        print(filter_n)  # [4, 5, 6]
+
         def fil(a):
             return a > 3
 
         filter_fn = list(filter(fil, list_a))
 
-        print(filter_fn) # [4, 5, 6]
+        print(filter_fn)  # [4, 5, 6]
 
         # Filter non-empty strings
         emp_str = ["", "hello", " ", "world"]
-        filter_non_empty = list(filter(lambda x: len(x.strip())!=0,emp_str))
+        filter_non_empty = list(filter(lambda x: len(x.strip()) != 0, emp_str))
         print(filter_non_empty)
 
         # Filter strings with digits
         str_l = ["abc", "123", "a1b2"]
-        filter_str_digits = list(filter(lambda x: x.isdigit(),str_l))
-        print(filter_str_digits) # ['123']
+        filter_str_digits = list(filter(lambda x: x.isdigit(), str_l))
+        print(filter_str_digits)  # ['123']
 
         # Filter using a custom function
         def is_prime(n):
             # 0 and 1 are not prime numbers
-            if n==0 or n==1:
+            if n == 0 or n == 1:
                 return False
-            for p in range(2,n):
-                if n%p == 0:
+            for p in range(2, n):
+                if n % p == 0:
                     return False
             return True
+
         prime = list(filter(is_prime, list_a))
         print(f"Prime numbers are: {prime}")
 
         # Filter negative numbers
-        neg = [-1,4,-5,3,-6]
-        filter_neg = list(filter(lambda x: x<0,neg))
-        print(filter_neg) # [-1, -5, -6]
+        neg = [-1, 4, -5, 3, -6]
+        filter_neg = list(filter(lambda x: x < 0, neg))
+        print(filter_neg)  # [-1, -5, -6]
 
         # Filter numbers divisible by a value
-        filter_div = list(filter(lambda x: x%2 == 0, list_a))
+        filter_div = list(filter(lambda x: x % 2 == 0, list_a))
         print(filter_div)  # [2, 4, 6]
 
 
-
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(f"\n -------- List --------")
     list_p = ListPractice()
     for i in [1, 22, 3, 4, 5]:

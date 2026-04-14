@@ -64,7 +64,6 @@ def max_area():
     return max_a
 
 
-
 res = two_sum(9)
 print(res)
 find_median()

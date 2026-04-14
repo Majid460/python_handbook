@@ -94,7 +94,7 @@ class BinarySearchTree:
                 current = current.left
         return mini
 
-    # Find the minimum node
+    # Find the max node
     def find_max_node(self) -> int:
         if not self.root:
             return -1
@@ -154,7 +154,7 @@ class BinarySearchTree:
             parent.right = child
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     bst = BinarySearchTree()
     # for i in [3, 2, 1, 4, 5, 6]:
     #     bst.insert(i)
@@ -175,5 +175,3 @@ if __name__ == '__main__':
     print("\n--------------- Remove element from BST --------------------")
     bst.delete_node(5)
     bst.inorder(bst.root)
-
-
