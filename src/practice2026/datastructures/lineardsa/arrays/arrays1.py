@@ -2,9 +2,12 @@ from collections import Counter
 import copy
 from functools import reduce
 from typing import List
+from collections import defaultdict
 
 # Lists are a collection of items that are ordered and changeable. They are defined by using square brackets [].
-list_1 = [1, 2, 3, 4, 5]
+list_1 = [1, 2, 3, 2, 2, 4, 5]
+c = Counter(list_1)
+print(c)
 
 
 def sum_elements():

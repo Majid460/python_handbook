@@ -60,8 +60,8 @@ def find_kth_smallest(arr, k):
 
 
 if __name__ == "__main__":
-    nums = [3, 2, 7, 1, 2, 4, 5, 5, 6]
-    k = 4
+    nums = [1, 2, 2, 3, 3, 3]
+    k = 2
 
     print(find_kth_largest_nums(nums, k))
 

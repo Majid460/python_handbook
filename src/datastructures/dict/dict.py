@@ -12,15 +12,20 @@ Each item is a key: value pair.
 Keys must be unique and immutable (strings, numbers, tuples).
 Values can be of any type (string, list, object, even another dictionary).
 """
+
+from typing import Dict
+
+
 print("\n----------- Dictionaries -------------\n")
 # To create an empty dictionary just use empty braces {}
 dictionary = {}
 
 # Dictionary with elements
-d = {"A":"AA","B":"BB"}
+d = {"A": "AA", "B": "BB"}
 
-#Dictionary with constructor (Create with round braces())
-d_con = dict([("A","AA"),("C","BB")])
+# Dictionary with constructor (Create with round braces())
+d_con = dict([("A", "AA"), ("C", "BB")])
+print(d_con)
 
 # Get Values from the Dict
 # 1. Simple with key
@@ -54,28 +59,28 @@ print:
 A=> AA
 B=> BB
 """
-for k,v in d.items():
+for k, v in d.items():
     print(f"{k}=> {v}")
 """
 A=> AA
 B=> BB
 """
 # To get index while looping through dictionary
-for i,k in enumerate(d):
+for i, k in enumerate(d):
     print(f"{i}=> {k}")
 """
 0=> A
 1=> B
 """
 # To loop over more than one sequences at a time
-for a,b in zip(d,d_con):
+for a, b in zip(d, d_con):
     print(f"Zip of two dictionaries=> {a}=> {b}")
 # 6. Dictionary using comprehension method
-di = {x: x*2 for x in (2,4,6)}
+di = {x: x * 2 for x in (2, 4, 6)}
 print(f"Dict using comprehension method => {di}")
 # Dict using comprehension method => {2: 4, 4: 8, 6: 12}
 
-#7. Ordered (Dictionaries are ordered)
+# 7. Ordered (Dictionaries are ordered)
 """
 How ordering works:
 The order is based on when a key was first inserted.
@@ -87,23 +92,23 @@ Updating the value of an existing key does not change its position.
 """
 d = {"x": 1, "y": 2, "z": 3}
 print(list(d.keys()))
-#['x', 'y', 'z']
+# ['x', 'y', 'z']
 d["y"] = 100
 print(list(d.keys()))
-#['x', 'y', 'z']
+# ['x', 'y', 'z']
 
-#But if you delete and reinsert a key, it moves to the end:
+# But if you delete and reinsert a key, it moves to the end:
 d = {"x": 1, "y": 2, "z": 3}
 print(list(d.keys()))
-#['x', 'y', 'z']
+# ['x', 'y', 'z']
 del d["y"]
 d["y"] = 200
 print(list(d.keys()))
-#['x', 'z', 'y']
+# ['x', 'z', 'y']
 
 # 8. Update Method
 # Update function can be used to add a new pair in the end of existing dict
-d.update({"a":12})
+d.update({"a": 12})
 print(d)
 # {'x': 1, 'z': 3, 'y': 200}
 # {'x': 1, 'z': 3, 'y': 200, 'a': 12}
@@ -124,7 +129,7 @@ print(f"Pop last element from dict => [{d}")
 # To remove a certain pair from the dict we can also use del
 del d["z"]
 print(f"Delete z key pair from dict => [{d}")
-#Delete z key pair from dict => [{'x': 1}
+# Delete z key pair from dict => [{'x': 1}
 
 # To make the dictionary empty
 d.clear()
@@ -140,7 +145,7 @@ To make copy of dictionary
 
 - To make a copy just use copy function or use dict()
 """
-d = {"a":1, "b":2, "c":3}
+d = {"a": 1, "b": 2, "c": 3}
 
 d_copy = d
 
@@ -174,23 +179,20 @@ Memory address of second dictionary => 4387913280
 """
 10. Nested Dictionary
 """
-s1 = {"name":"Alice","age":19}
-s2 = {"name":"Bob","age":20}
-s3 = {"name":"John","age":21}
-students = {
-    "student_one":s1,
-    "student_two":s2,
-    "student_three":s3
-}
+s1 = {"name": "Alice", "age": 19}
+s2 = {"name": "Bob", "age": 20}
+s3 = {"name": "John", "age": 21}
+students = {"student_one": s1, "student_two": s2, "student_three": s3}
 print(students)
 
+print(students["student_one"]["name"])
 # Access the elements in nested list
-
-print(f"Student one name =>{students["student_one"]["name"]}")
+new_dict: Dict[str, str] = {}
+# print(f"Student one name =>{students["student_one"]["name"]}")
 # Student one name =>Alice
 
 # Loop through nested dictionary
-for k,v in students.items():
+for k, v in students.items():
     print(f"Complete object: {k}=> {v}")
     for i in v:
         print(f"Detail about each object: {i}=> {v[i]}")

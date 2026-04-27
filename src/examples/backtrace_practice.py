@@ -229,7 +229,7 @@ class Map:
         )  # converting to list is O(n) because map returns a iterator not a list
         print(f"Multiply by 10 : {multiply}")
         # we can avoid that by .join() accepts any iterable of strings, not just a list.
-        sq = " ".join(map(lambda x: str(x**2), self.lis))
+        sq = " ".join([i**2 for i in self.lis])
         print(f"Square of each number : {sq}")
         # Addition
         ad = " ".join(map(lambda r: str(r + 5), self.lis))
@@ -237,7 +237,7 @@ class Map:
 
         # Convert a list of lower to upper
         low_list = ["ssaf", "fdds", "gffdd"]
-        up_li = " ".join(map(lambda d: str.upper(d), low_list))
+        up_li = " ".join([d.upper() for d in low_list])
         print(f"Lower to upper case : {up_li}")
 
         # Get the length of each word in ['apple', 'banana', 'cherry'].

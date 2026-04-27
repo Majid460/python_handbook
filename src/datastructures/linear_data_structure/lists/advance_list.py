@@ -1,17 +1,16 @@
-
 """
 To create a list from a other collections we can use list()
 """
 
 print("\n----------- Some List Operations-------------\n")
-from_tuple_to_list = list(("a","b","c"))
+from_tuple_to_list = list(("a", "b", "c"))
 
 """
 Double bracket is used because ("a","b","c") is a tuple so it converts the tuple to list
 """
 # From set to list
 
-from_set_to_list = list({"a","b","c"})
+from_set_to_list = list({"a", "b", "c"})
 
 # From string to list
 
@@ -19,7 +18,7 @@ from_string_to_list = list("abc")
 # from string → ['a', 'b', 'c']
 
 # 1. Access Items
-thisList = ["a","b","c",1]
+thisList = ["a", "b", "c", 1]
 print(f"Access Element => {thisList[0]}")
 # Prints -> Access Element => a
 
@@ -37,11 +36,15 @@ print(f"Negative indexing -> element at -1 index => {thisList[-1]}")
 You can specify a range of indexes by specifying where to start and where to end the range.
 When specifying a range, the return value will be a new list with the specified items.
 """
-print(f"Range of indexing -> element from 0 until 1 index (exclude 2) => {thisList[0:2]}")
+print(
+    f"Range of indexing -> element from 0 until 1 index (exclude 2) => {thisList[0:2]}"
+)
 # Range of indexing -> element from 0 until 2 index (exclude 2) => ['a', 'b']
 
 # From Start to until index-1
-print(f"Range of indexing -> element from 0 until 2 index (exclude 3) => {thisList[:3]}")
+print(
+    f"Range of indexing -> element from 0 until 2 index (exclude 3) => {thisList[:3]}"
+)
 # Range of indexing -> element from 0 until 2 index (exclude 3) => ['a', 'b', 'c']
 
 # From specific index to end
@@ -139,7 +142,7 @@ thisList = ["apple", "banana", "cherry"]
 for i in thisList:
     print(i)
 for i in range(len(thisList)):
-  print(f"Printing using for loop => {thisList[i]}")
+    print(f"Printing using for loop => {thisList[i]}")
 
 """
 Printing using for loop => apple
@@ -148,7 +151,7 @@ Printing using for loop => cherry
 """
 # Printing using While loop
 i = 0
-while i< len(thisList):
+while i < len(thisList):
     print(f"Printing using while loop => {thisList[i]}")
     i += 1
 """
@@ -157,7 +160,10 @@ Printing using while loop => banana
 Printing using while loop => cherry
 """
 # Using List Comprehension
-[print(f"Printing using List comprehension loop => {thisList[i]}") for i in range(len(thisList))]
+[
+    print(f"Printing using List comprehension loop => {thisList[i]}")
+    for i in range(len(thisList))
+]
 
 """
 Printing using List comprehension loop => apple
@@ -184,14 +190,12 @@ Row1  →    4       5       6
 Row2  →    7       8       9
 """
 # Explore the 2D list in depth
+mat = [[0 for _ in range(3)] for _ in range(3)]
+print(mat)
 
 # Create a default list
 # A metrics with 3x3
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 # Access the elements of 2d_list
 print(f"Access the elements of 2d_list at [0][0] => {matrix[0][0]}")
 
@@ -214,6 +218,10 @@ So think like a 1D array to a 2D array.
 """
 for row in matrix:
     print(f"Access the elements of first Column of 2d_list => {row[0]}")
+
+for row in range(len(matrix)):
+    for col in range(len(matrix[0])):
+        print(matrix[row][col])
 """
 Access the elements of first Column of 2d_list => 1
 Access the elements of first Column of 2d_list => 4
@@ -246,8 +254,7 @@ print(" " * 8 + "Column0 Column1 Column2")
 #     print("\n")
 
 for row_index, row in enumerate(matrix):
-    print(f"Row{row_index}  →", end="    ")
+    print(f"Row {row_index}  →", end="    ")
     for item in row:
         print(f"{item:<7}", end="")  # left-aligned with fixed width
     print()
-

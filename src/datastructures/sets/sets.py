@@ -6,6 +6,7 @@ A set is a collection which is unordered, unchangeable, and unindexed with no du
 
 Note: Set items are unchangeable, but you can remove items and add new items.
 """
+
 print("\n----------- Sets -------------\n")
 my_set = {"apple", "banana", "cherry"}
 print(f"Set => {my_set}")
@@ -13,7 +14,7 @@ print(f"Set => {my_set}")
 print("\n----------- Set Operations -------------\n")
 # 1. Duplicates are not allowed
 
-my_set = {"apple", "banana", "cherry","apple"}
+my_set = {"apple", "banana", "cherry", "apple"}
 print(f"Set after adding duplicate => {my_set}")
 # Set => {'apple', 'banana', 'cherry'}
 
@@ -22,7 +23,7 @@ Note:
 The values True and 1 are considered the same value in sets, and are treated as duplicates:
 - As in following example it removed the true and false from set and keep 0 means false, 1 means true
 """
-my_set = {"apple", "banana", "cherry",1,True,0, False}
+my_set = {"apple", "banana", "cherry", 1, True, 0, False}
 print(f"The set after adding true and 0 => {my_set}")
 # The set after adding true and 0 => {0, 1, 'cherry', 'banana', 'apple'}
 
@@ -35,7 +36,7 @@ print(f"Length of set is: {len(my_set)}")
 set1 = {"abc", 34, True, 40, "male"}
 
 # 3. We can also create a set with set constructor
-set2 = set(("A","B","C"))
+set2 = set(("A", "B", "C"))
 print(set2)
 
 # 4. Access Items from set
@@ -55,8 +56,8 @@ Element in set is: C
 Element in set is: B
 """
 # 2. Check membership
-print("A" in set2) # True
-print("G" not in set2) # True
+print("A" in set2)  # True
+print("G" not in set2)  # True
 
 print("\n----------- Set Immutability -------------\n")
 """
@@ -76,7 +77,7 @@ tropical = {"pineapple", "mango", "papaya"}
 
 this_set.update(tropical)
 print(f"Set after adding new set: {this_set}")
-#Set after adding new set: {'apple', 'papaya', 'cherry', 'pineapple', 'banana', 'mango'}
+# Set after adding new set: {'apple', 'papaya', 'cherry', 'pineapple', 'banana', 'mango'}
 
 # Add any iterable in set
 # The object in the update() method does not have to be a set, it can be any iterable object (tuples, lists, dictionaries etc.).
@@ -158,7 +159,7 @@ print("\n-----------2. Difference of Sets -------------\n")
 
 diff = set_a.difference(set_b)
 print(f"Difference of sets:: {diff}")
-#Difference of sets:: {'cherry', 'banana'}
+# Difference of sets:: {'cherry', 'banana'}
 
 # We can also use minus (-) operator for that.
 set3 = set_a - set_b
@@ -170,7 +171,7 @@ set2 = {"google", "microsoft", "apple"}
 
 set1.difference_update(set2)
 print(f"Difference update =>{set1}")
-#Difference update =>{'cherry', 'banana'}
+# Difference update =>{'cherry', 'banana'}
 
 print("\n-----------2. Symmetric Difference of Sets -------------\n")
 # The symmetric_difference() method will keep only the elements that are NOT present in both sets.

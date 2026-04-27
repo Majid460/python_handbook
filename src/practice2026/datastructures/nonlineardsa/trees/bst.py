@@ -370,8 +370,8 @@ class Bst:
             if not node:
                 return 0
             # Height of left subtree
-            left = self.diameter(node.left)
-            right = self.diameter(node.right)
+            left = dfs(node.left)
+            right = dfs(node.right)
             # Max this result
             self.res = max(self.res, left + right)
             return 1 + max(left, right)  # Height
